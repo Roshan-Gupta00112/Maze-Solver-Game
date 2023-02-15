@@ -80,7 +80,7 @@ public class NewClass extends JFrame{
                 g.setColor(color);
                 g.fillRect(30*col,30*row,30,30);//outline color
                 g.setColor(Color.BLUE);
-                g.drawRect(30*col,30*row,30,30);
+               g.drawRect(30*col,30*row,30,30);
               
             }
         }
@@ -93,12 +93,12 @@ public class NewClass extends JFrame{
             System.out.println("path y coordinate"+pathy);
             g.setColor(Color.ORANGE);
             g.fillRect(pathx*30, pathy*30, 30, 30);
-            g.setColor(Color.CYAN);
+           g.setColor(Color.CYAN);
             g.drawRect(30*pathx,30*pathy,30,30);
             
             
         }
-//        draw the ball
+        //   draw the ball
         int pathX = path.get(pathIndex);
         int pathY = path.get(pathIndex + 1);
         g.setColor(Color.RED);
@@ -109,13 +109,13 @@ public class NewClass extends JFrame{
         if (ke.getID() != KeyEvent.KEY_PRESSED) {
             return;
         }
-        if (ke.getKeyCode() == KeyEvent.VK_RIGHT) {
+        if (ke.getKeyCode() == KeyEvent.VK_RIGHT) {    // the getKeyCode method returns the event's keyCode
             pathIndex -= 2;
             if (pathIndex < 0) {
                 pathIndex = 0;
             }
         }
-        else if (ke.getKeyCode() == KeyEvent.VK_LEFT) {
+        else if (ke.getKeyCode() == KeyEvent.VK_LEFT) {   
             pathIndex += 2;
             if (pathIndex > path.size() - 2) {
                 pathIndex = path.size() - 2;
@@ -125,7 +125,7 @@ public class NewClass extends JFrame{
     }
     
     public static void main(String[] args){
-        SwingUtilities.invokeLater(new Runnable(){
+        SwingUtilities.invokeLater(new Runnable(){   //Causes doRun. run() to be executed asynchronously on the AWT event dispatching thread(EDT).
             @Override
             public void run(){
                 NewClass view =new NewClass();
