@@ -14,8 +14,7 @@ public class DepthFirst {
     //in DFS we mark the visited node as vistsed like yes i have covered the node
     //for priniting a path a line so need to add x,y need arraylist
     public static boolean searchpath(int[][] maze, int x, int y, List<Integer> path){
-        if(maze[y][x]==9){
-            // 9 is the end(finish) value add those cordinates
+        if(maze[y][x]==9){  // 9 is the end(finish) value add those cordinates
             path.add(x);
             path.add(y);
             return true;       
@@ -59,7 +58,7 @@ public class DepthFirst {
                 return true;
             } 
         }
-        //if value is not 9 and 0 then it will be 1 so return false
+        // while coming back marking that Place as False to make that place aavailable for any other part
         return false;
     } 
 }
